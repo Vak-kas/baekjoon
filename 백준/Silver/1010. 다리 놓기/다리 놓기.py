@@ -1,13 +1,13 @@
 import sys;
 import math;
 
-# def factorial(n):
-#     if n==1:
-#         return 1;
-#     s =n * factorial(n-1);
-#     # print(s);
+def factorial(n):
+    ans = 1;
     
-#     return s;
+    for i in range(1, n+1):
+        ans *=i;
+        
+    return ans;
 
 n = int(sys.stdin.readline().rstrip());
 
@@ -17,9 +17,9 @@ for i in range(n):
     a, b = (map(int, sys.stdin.readline().split()));
     
 
-    k = math.factorial(a);
+    k = factorial(a);
 
-    l = math.factorial(b);
-    m = math.factorial(b-a)
+    l = factorial(b);
+    m = factorial(b-a)
 
     print(int(l/(k*m)));
